@@ -5,7 +5,6 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { FaMoon, FaSun } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleTheme } from '../redux/theme/themeSlice';
-import { current } from '@reduxjs/toolkit';
 
 function Header() {
     const path = useLocation().pathname;
@@ -43,7 +42,7 @@ function Header() {
                     inline
                     label = {
                         <Avatar alt='user'
-                        image={currentUser.profilePicture}
+                        img={currentUser.profilePicture}
                         rounded/>
                     }>
                         <Dropdown.Header>
