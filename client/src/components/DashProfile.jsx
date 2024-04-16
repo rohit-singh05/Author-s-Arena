@@ -7,7 +7,7 @@ import 'react-circular-progressbar/dist/styles.css';
 
 function DashProfile() {
   const { currentUser } = useSelector(state => state.user)
-  const { imageFile, setImageFile } = useState(null)
+  const [imageFile, setImageFile] = useState(null)
   const [imageFileUrl, setImageFileUrl] = useState(null)
   const [imageFileUploadProgress, setImageFileUploadProgress] = useState(null)
   const [imageFileUploadError, setImageFileUploadError] = useState(null)
@@ -16,7 +16,7 @@ function DashProfile() {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setImageFile(file);
+      setImageFile(file)
       setImageFileUrl(URL.createObjectURL(file))
     }
   }
