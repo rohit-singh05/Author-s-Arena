@@ -3,12 +3,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage'
 import { CircularProgressbar } from 'react-circular-progressbar';
-import {
-  getDownloadURL,
-  getStorage,
-  ref,
-  uploadBytesResumable,
-} from 'firebase/storage';
 import { app } from '../firebase';
 import 'react-circular-progressbar/dist/styles.css';
 
