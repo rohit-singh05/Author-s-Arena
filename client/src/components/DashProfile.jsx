@@ -1,16 +1,20 @@
 import { TextInput, Button, Alert } from 'flowbite-react'
 import React, { useEffect, useRef, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import { app } from '../firebase';
 import 'react-circular-progressbar/dist/styles.css';
+<<<<<<< HEAD
 import {
   updateStart, updateSuccess, updateFailure,
   deleteUserStart, deleteUserFailure, deleteUserSuccess
 } from '../redux/user/userSlice';
 import { useDispatch } from 'react-redux';
 import { HiOutlineExclamationCircle } from 'react-icons/hi'
+=======
+import { updateStart, updateSuccess, updateFailure } from '../redux/user/userSlice';
+>>>>>>> 0fc7f6d5c5a3c8732662a3d4cd363ba858269c4f
 
 function DashProfile() {
   const { currentUser, error } = useSelector(state => state.user)
@@ -18,6 +22,7 @@ function DashProfile() {
   const [imageFileUrl, setImageFileUrl] = useState(null)
   const [imageFileUploadProgress, setImageFileUploadProgress] = useState(null)
   const [imageFileUploadError, setImageFileUploadError] = useState(null)
+<<<<<<< HEAD
   const [imageFileUploading, setImageFileUploading] = useState(false);
   const [updateUserSuccess, setUpdateUserSuccess] = useState(null);
   const [updateUserError, setUpdateUserError] = useState(null);
@@ -27,6 +32,11 @@ function DashProfile() {
 
   const dispatch = useDispatch();
 
+=======
+  const [formData, setFormData] = useState({});
+  const filePickerRef = useRef()
+  const dispatch = useDispatch();
+>>>>>>> 0fc7f6d5c5a3c8732662a3d4cd363ba858269c4f
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -65,12 +75,47 @@ function DashProfile() {
       },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+<<<<<<< HEAD
           setImageFileUrl(downloadURL)
           setFormData({ ...formData, profilePicture: downloadURL })
           setImageFileUploading(false);
+=======
+          setImageFileUrl(downloadURL);
+          setFormData({ ...formData, profilePicture: downloadURL });
+>>>>>>> 0fc7f6d5c5a3c8732662a3d4cd363ba858269c4f
         })
       }
     )
+  }
+  const handleChange = (e)=>{
+    setFormData({...formData, [e.target.id]: e.target.value});
+  };
+  // console.log(formData);
+  const handleSubmit = async (e)=>{
+    e.preventDefault();
+    if (Object.keys(formData).length === 0) {
+      return;
+    }
+    try {
+      dispatch(updateStart());
+      const res = await fetch(`/api/user/update/${currentUser._id}`, {
+        method: 'PUT',
+        headers:{
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (!(res.ok))
+      {
+        dispatch(updateFailure(data.message));
+      }
+      else{
+        dispatch(updateSuccess(data));
+      }
+    } catch (error) {
+      dispatch(updateFailure(error.message));
+    }
   }
 
   const handleChange = (e) => {
@@ -186,7 +231,12 @@ function DashProfile() {
         <TextInput
           type='password'
           id='password'
+<<<<<<< HEAD
           placeholder='password' onChange={handleChange}
+=======
+          placeholder='password'
+          onChange={handleChange}
+>>>>>>> 0fc7f6d5c5a3c8732662a3d4cd363ba858269c4f
         />
         <Button type='submit'
           gradientDuoTone='purpleToBlue'
