@@ -25,7 +25,7 @@ function SignIn() {
       return dispatch(signInFailure('Please fill out all the fields'))
     }
     try {
-      dispatch(signInStart);
+      dispatch(signInStart());
       const res = await fetch('/api/auth/signin', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
