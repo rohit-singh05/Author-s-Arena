@@ -61,6 +61,7 @@ export default function DashComments() {
             if (res.ok) {
                 setComments((prev) =>
                     prev.filter((comment) => comment._id !== commentIdToDelete)
+                    // setComments(comments.filter(comment=>comment._id!==commentIdToDelete))
                 );
                 setShowModal(false);
             } else {
