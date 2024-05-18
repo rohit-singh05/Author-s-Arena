@@ -47,7 +47,7 @@ export default function Comment({comment, onLike, onEdit, onDelete}) {
                 onEdit(comment, editedContent);
             }
         } catch (error) {
-            console.log(erorr.message);
+            console.log(error.message);
         }
     }
   return (

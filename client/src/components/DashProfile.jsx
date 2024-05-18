@@ -268,7 +268,7 @@ export default function DashProfile() {
       )}
       {updateUserError && (
         <Alert color="failure" className="mt-5">
-          {xUserError}
+          {UserError}
         </Alert>
       )}
       {error && (

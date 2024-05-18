@@ -9,7 +9,7 @@ export default function DashComments() {
     const [comments, setComments] = useState([]);
     const [showMore, setShowMore] = useState(true);
     const [showModal, setShowModal] = useState(false);
-    const [commentIdToDelete, setCommentIdToDelete] = useState('');
+    const [commentIdToDelete, setCommentIdToDelete] = useState(null);
     useEffect(() => {
         const fetchComments = async () => {
             try {
@@ -61,6 +61,7 @@ export default function DashComments() {
             if (res.ok) {
                 setComments((prev) =>
                     prev.filter((comment) => comment._id !== commentIdToDelete)
+                    // setComments(comments.filter(comment=>comment._id!==commentIdToDelete))
                 );
                 setShowModal(false);
             } else {

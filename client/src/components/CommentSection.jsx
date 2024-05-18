@@ -60,7 +60,7 @@ export default function CommentSection({postId}) {
                 navigate('/sign-in')
                 return;
             }
-            const res = fetch(`/api/comment/likeComment/${commentId}`,{
+            const res = await fetch(`/api/comment/likeComment/${commentId}`,{
                 method: 'PUT',
 
             });
@@ -91,7 +91,7 @@ export default function CommentSection({postId}) {
                 navigate('/sign-in');
                 return;
             }
-            const res = fetch(`/api/comment/deleteComment/${commentId}`,{
+            const res = await fetch(`/api/comment/deleteComment/${commentId}`,{
                 method: 'DELETE'
             });
             if (res.ok){
