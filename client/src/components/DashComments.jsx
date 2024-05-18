@@ -9,7 +9,7 @@ export default function DashComments() {
     const [comments, setComments] = useState([]);
     const [showMore, setShowMore] = useState(true);
     const [showModal, setShowModal] = useState(false);
-    const [commentIdToDelete, setCommentIdToDelete] = useState(null);
+    const [commentIdToDelete, setCommentIdToDelete] = useState('');
     useEffect(() => {
         const fetchComments = async () => {
             try {
