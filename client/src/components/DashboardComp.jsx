@@ -80,7 +80,7 @@ export default function DashboardComp() {
                     <div className='flex  gap-2 text-sm'>
                         <span className='text-green-500 flex items-center'>
                             <HiArrowNarrowUp />
-                            {lastMonthUsers}
+                            {lastMonthUsers || 0}
                         </span>
                         <div className='text-gray-500'>Last month</div>
                     </div>
