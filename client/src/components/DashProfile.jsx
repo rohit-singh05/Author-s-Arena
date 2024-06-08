@@ -248,7 +248,7 @@ export default function DashProfile() {
               gradientDuoTone="purpleToPink"
               className="w-full"
             >
-              Create a post
+              Upload your work
             </Button>
           </Link>
         )}
@@ -268,7 +268,7 @@ export default function DashProfile() {
       )}
       {updateUserError && (
         <Alert color="failure" className="mt-5">
-          {xUserError}
+          {UserError}
         </Alert>
       )}
       {error && (
