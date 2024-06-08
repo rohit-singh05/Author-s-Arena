@@ -54,17 +54,10 @@ export default function Header() {
         to="/"
         className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white"
       >
-<<<<<<< HEAD
-        <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
-          Writer's
-        </span>
-        Den
-=======
         <span className="px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white">
           Author's
         </span>
         Arena
->>>>>>> a5c8d254ce83991f338a17837735554cd557be1f
       </Link>
       <form onSubmit={handleSubmit}>
         <TextInput
