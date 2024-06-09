@@ -1,1 +1,1 @@
-# MERN-Blog
+# Author's Arena
