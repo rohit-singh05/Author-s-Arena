@@ -23,7 +23,10 @@ export default function CallToAction() {
         </Button>
       </div>
       <div className="p-7 flex-1">
-        <img src="https://bairesdev.mo.cloudinary.net/blog/2023/08/What-Is-JavaScript-Used-For.jpg" />
+        <img
+          className="rounded-t-3xl rounded-b-3xl"
+          src="https://media.sva.edu/image/upload/heroImage/laura-brown-writing-3033x1710-laura-brown-1692029515-derivative.webp"
+        />
       </div>
     </div>
   );
